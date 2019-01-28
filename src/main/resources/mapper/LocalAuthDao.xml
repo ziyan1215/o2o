@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xz.myo2o.dao.LocalAuthDao">
+	<!-- id属性 ，resultMap标签的标识。 type属性 ，返回值的全限定类名，或类型别名。 autoMapping属性 ，值范围true（默认值）|false, 
+		设置是否启动自动映射功能，自动映射功能就是自动查找与字段名小写同名的属性名，并调用setter方法。而设置为false后，则需要在`resultMap`内明确注明映射关系才会调用对应的setter方法。 -->
+	<resultMap type="com.xz.myo2o.entity.LocalAuth"
+		id="localAuthResultMap">
+		<id column="local_auth_id" property="localAuthId" />
+		<id column="user_id" property="userId" />
+		<result column="user_name" property="userName" />
+		<result column="password" property="password" />
+		<result column="create_time" property="createTime" />
+		<result column="last_edit_time" property="lastEditTime" />
+		<association property="personInfo" column="user_id"
+			javaType="com.xz.myo2o.entity.PersonInfo">
+			<id column="user_id" property="userId" />
+			<result column="name" property="name" />
+			<result column="birthday" property="birthday" />
+			<result column="gender" property="gender" />
+			<result column="phone" property="phone" />
+			<result column="email" property="email" />
+			<result column="profile_img" property="profileImg" />
+			<result column="customer_flag" property="customerFlag" />
+			<result column="shop_owner_flag" property="shopOwnerFlag" />
+			<result column="admin_flag" property="adminFlag" />
+			<result column="create_time" property="createTime" />
+			<result column="last_edit_time" property="lastEditTime" />
+			<result column="enable_status" property="enableStatus" />
+		</association>
+	</resultMap>
+
+	<!--keyProperty:返回對應的對象的主鍵 keyColumn:表的主键 -->
+	<insert id="insertLocalAuth"
+		parameterType="com.xz.myo2o.entity.LocalAuth" useGeneratedKeys="true"
+		keyProperty="localAuthId" keyColumn="local_auth_id">
+		INSERT
+		INTO
+		tb_local_auth(user_name,password,user_id,create_time,last_edit_time)
+		VALUES
+		(#{userName},#{password},#{userId},#{createTime},#{lastEditTime})
+	</insert>
+
+	<!--通过名和密码查询用户信息 parameterType:输入参数的类型 -->
+	<select id="getLocalAuthByUserNameAndPwd"
+		resultMap="localAuthResultMap" parameterType="String">
+		SELECT
+		l.local_auth_id,
+		l.user_id,
+		l.user_name,
+		l.password,
+		l.create_time,
+		l.last_edit_time,
+		p.user_id,
+		p.name,
+		p.birthday,
+		p.gender,
+		p.phone,
+		p.email,
+		p.profile_img,
+		p.customer_flag,
+		p.shop_owner_flag,
+		p.admin_flag,
+		p.create_time,
+		p.last_edit_time,
+		p.enable_status
+		FROM
+		tb_local_auth l
+		LEFT
+		JOIN
+		tb_person_info
+		p ON l.user_id =
+		p.user_id
+		WHERE
+		l.user_name =
+		#{userName}
+		AND
+		l.password = #{password}
+	</select>
+
+</mapper>

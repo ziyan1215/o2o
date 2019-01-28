@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xz.myo2o.dao.PersonInfoDao">
+	<insert id="insertPersonInfo"
+		parameterType="com.xz.myo2o.entity.PersonInfo" useGeneratedKeys="true"
+		keyProperty="userId" keyColumn="user_id">
+		INSERT
+		INTO
+		tb_person_info(name,birthday,gender,phone,email,profile_img,customer_flag,shop_owner_flag,
+		admin_flag,create_time,last_edit_time,enable_status)
+		VALUES
+		(#{name},#{birthday},#{gender},#{phone},#{email},#{profileImg},
+		#{customerFlag},#{shopOwnerFlag},#{adminFlag},
+		#{createTime},#{lastEditTime},#{enableStatus})
+	</insert>
+</mapper>

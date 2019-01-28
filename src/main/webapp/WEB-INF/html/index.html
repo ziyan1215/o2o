@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</head>
+<body>
+<!--http://localhost:8080/myo2o/shop/uploadTest  -->
+	<form action="/myo2o/shop/uploadtest" method="post" enctype="multipart/form-data">
+	     <input type="file" name="file">
+	     <input type="submit" value="提交">
+     </form>
+	
+</body>
+
+
+<script type="text/javascript">
+//获取图片本地url
+
+/* function getObjectURL(file) {
+var url = null;
+if (window.createObjectURL != undefined) { // basic
+url = window.createObjectURL(file);
+} else if (window.URL != undefined) { // mozilla(firefox)
+url = window.URL.createObjectURL(file);
+} else if (window.webkitURL != undefined) { // webkit or chrome
+url = window.webkitURL.createObjectURL(file);
+}
+return url;
+}
+
+//上传文件
+
+var videoupload;
+
+$("#small-img").change(function () {
+	alert("1");
+var imgUrl = getObjectURL(this.files[0]);
+console.log(imgUrl);
+$("#small-img").attr("src", imgUrl);
+console.log($("#small-img")[0].files[0]);
+var formData = new FormData($("#small-img")[0].files[0]);
+$.ajax({
+url: '/shop/uploadTest',
+type: 'post',
+data: formData,
+dataType: 'json',
+async: false,
+cache: false,
+contentType: false,
+processData: false,
+success: function (res) {
+if (res.errorMessage) {
+alert(res.errorMessage);
+} else {
+
+alert(res);
+}
+}
+
+});
+}); */
+
+ 
+</script>
+</html>
