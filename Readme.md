@@ -4,10 +4,7 @@
 require jdk1.8  tomcat9.0/8.5
 
 
-# �ƻ�
-������������ѯ��ɾ�����޸�
-modelMap.put(ConstantForSuperAdmin.PAGE_SIZE, list);����ֱ�ӽ�list����ת����json��ʽ
-List<Area> list = new ArrayList<Area>(); 
+
 
 
 
