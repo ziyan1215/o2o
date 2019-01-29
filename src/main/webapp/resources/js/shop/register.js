@@ -2,7 +2,7 @@
  * 
  */
 $(function() {
-	var registerUrl = '/myo2o/shop/ownerregister';
+	var registerUrl = '/o2o/shop/ownerregister';
 	$('#submit').click(function() {
 		var localAuth = {};
 		var personInfo = {};//定义一个个人信息对象
@@ -33,7 +33,7 @@ $(function() {
 			success : function(data) {
 				if (data.success) {
 					$.toast('提交成功！');
-					window.location.href = '/myo2o/shop/ownerlogin';
+					window.location.href = '/o2o/shop/ownerlogin';
 				} else {
 					$.toast('提交失败！');
 					$('#captcha_img').click();
@@ -43,6 +43,6 @@ $(function() {
 	});
 
 	$('#back').click(function() {
-		window.location.href = '/myo2o/shop/ownerlogin';
+		window.location.href = '/o2o/shop/ownerlogin';
 	});
 });
