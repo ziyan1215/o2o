@@ -2,7 +2,9 @@ package com.xz.myo2o.dao;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,4 +54,34 @@ public class ShopDaoTest extends BaseTest{
 		System.out.println(effectedNum);
 	}
 
+	@Test
+	public void queryByOwnerIdTest() {
+		Shop shop ;
+		shop=shopDao.queryByshopId(15L);
+		System.out.println(shop.toString());
+	}
+
+	@Test
+	public void queryByemployeeIdTest() {
+		List<Shop> shopList;
+		shopList=shopDao.queryByEmployeeId(8L);
+		System.out.println(shopList.size());
+	}
+
+	@Test
+	public void updateShopTest() {
+		Shop shop = new Shop();
+		shop.setShopId(28L);
+		int effNum;
+		shop.setLastEditTime(new Date());
+		effNum=shopDao.updateShop(shop);
+		System.out.println(effNum);
+	}
+
+	@Test
+	public void deleteShopBynameTest() {
+		int effNum;
+		effNum=shopDao.deleteShopByname("test");
+		System.out.println(effNum);
+	}
 }
