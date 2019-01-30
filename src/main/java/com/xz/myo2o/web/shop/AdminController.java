@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("/shop")
 public class AdminController {
-	
+
+
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	private String register() {
 		return "shop/register";
@@ -30,7 +31,8 @@ public class AdminController {
 	private String shopmanage() {
 		return "shop/shopmanage";
 	}
-	
+
+	//登录成功的界面
 	@RequestMapping(value = "/shoplist", method = RequestMethod.GET)
 	private String shoplist() {
 		return "shop/shoplist";
