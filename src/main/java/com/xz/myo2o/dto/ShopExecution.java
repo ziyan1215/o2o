@@ -30,6 +30,13 @@ public class ShopExecution {
 	public ShopExecution() {
 		
 	};
+
+	//失败的构造器
+	public ShopExecution(ShopStateEnum stateEnum){
+		this.state=stateEnum.getState();
+		this.stateInfo =stateEnum.getStateInfo();
+	}
+
 	
 	//操作成功时的构造函数
     public ShopExecution(ShopStateEnum stateEnum,Shop shop) {
