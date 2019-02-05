@@ -23,10 +23,10 @@ public class AreaServiceImplTest extends BaseTest{
 	@Test
 	public void test() {
 		
-		List<Area> areaList= new ArrayList<>();
-		areaList=areaService.queryArea();
+		//List<Area> areaList= new ArrayList<>();
+		//areaList=areaService.queryArea();
 		
-		System.out.println(areaList.size());
+		//System.out.println(areaList.size());
 	}
 
 }

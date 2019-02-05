@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-
 import com.xz.myo2o.dto.ShopExecution;
 import com.xz.myo2o.entity.PersonInfo;
 import com.xz.myo2o.entity.Shop;

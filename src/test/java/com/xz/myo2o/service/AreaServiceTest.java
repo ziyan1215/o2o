@@ -28,4 +28,15 @@ public class AreaServiceTest extends BaseTest {
 				areaService.addArea(a);
 	}
 
+	@Test
+	public void getAreaList() {
+
+		Area a = new Area();
+		a.setAreaName("testArea");
+		a.setPriority(0);
+
+		areaService.addArea(a);
+	}
+
+
 }

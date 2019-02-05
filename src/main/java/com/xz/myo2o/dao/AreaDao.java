@@ -32,10 +32,10 @@ public interface AreaDao {
 	int insertArea(Area area);
 	
 	int updateArea(Area area);
-	
-	int deleteArea(Area area);
-	
-	int batchDeleteArea(Area area);
+
+	int deleteArea(long areaId);
+
+	int batchDeleteArea(List<Long> areaIdList);
 	
 	
 }

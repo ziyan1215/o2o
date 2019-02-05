@@ -30,7 +30,7 @@ public class AreaController {
 	/**
 	 * used: 查询区域列表 last update time : 2019年1月21日下午3:17:26 return
 	 * :Map<String,Object>
-	 * 
+	 *
 	 * @return 区域列表
 	 */
 	@RequestMapping(value = "/listarea", method = RequestMethod.POST)
@@ -41,7 +41,7 @@ public class AreaController {
 		List<Area> list = new ArrayList<Area>();
 		// 查询数据库
 		try {
-			list = areaService.queryArea();
+			list = areaService.getAreaList();
 			// rows [{},{}]
 			modelMap.put(ConstantForSuperAdmin.PAGE_SIZE, list);
 			// total
